@@ -17,7 +17,7 @@ Require your dependencies and initialize express. Run the `app.use` method on `b
 
 --------
 
-Once everything is working we can set up the our the first of our new dependencies: CORS. The most simple usage of CORS is to simply `app.use(cors())`. This
+Once everything is working we can set up the first of our new dependencies: CORS. The most simple usage of CORS is to simply `app.use(cors())`. This
 will allow cross-origin requests from any domain, across all of your endpoints. This would accomplish roughly the same thing as our custom `addHeaders`
 middleware from yesterday. The primary drawback to this method is the insecurity; any domain can freely make requests to our server. So we will be configuring
 CORS to whitelist only a specific origin.
@@ -78,7 +78,7 @@ We'll need some data inside our controllers to check against and send to our use
 var users = [
   {
     name: 'Preston McNeil',
-    password: 'password1',
+    // password: 'password1',
     friends: ['Lindsey Mayer', 'Terri Ruff']
   },
   {
@@ -178,7 +178,7 @@ To start, you'll notice that our `mainCtrl.js` is calling the `login` function i
 your `login` endpoint, sending the `user` object we received from our controller.
 
 Next, we need to write the `getFriends` method in `friendService.js` so that it sends a `GET`
-request to our `/api/profiles` endpoint. 
+request to our `/api/profiles` endpoint.
 
 Lastly, in `profileCtrl.js` you will need to assign the correct values (coming from the `getFriends` method in your service) to `$scope.currentUser` and `$scope.friends`.
 
